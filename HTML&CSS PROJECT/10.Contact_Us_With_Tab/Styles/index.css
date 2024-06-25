@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #dad3f8;
+}
+
+.container {
+    max-width: 950px;
+    width: 100%;
+    margin: 0 20px;
+    background: #fff;
+    padding: 40px 50px 40px 40px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.main-title {
+    font-size: 30px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.content {
+    display: flex;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    gap: 10px;
+    width: 20%;
+}
+
+label {
+    width: 100%;
+    border-radius: 12px;
+    line-height: 60px;
+    padding-left: 25px;
+    color: #333;
+    height: 60px;
+    font-size: 22px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center; 
+    z-index: 12;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+label i {
+    margin-right: 10px;
+}
+
+.topic {
+    font-size: 16px;
+}
+
+.indicator {
+    position: absolute;
+    height: 60px;
+    width: 100%;
+    left: 0;
+    background: #6d50e2;
+    border-radius: 12px;
+    transition: top 0.3s ease;
+}
+
+.tab-content {
+    width: 80%;
+    padding: 20px;
+}
+
+input[type="radio"]#tab1:checked ~ .tab-content #home-content {
+    display: block;
+}
+input[type="radio"]#tab2:checked ~ .tab-content #blog-content {
+    display: block;
+}
+input[type="radio"]#tab3:checked ~ .tab-content #help-content {
+    display: block;
+}
+input[type="radio"]#tab4:checked ~ .tab-content #code-content {
+    display: block;
+}
+input[type="radio"]#tab5:checked ~ .tab-content #about-content {
+    display: block;
+}
+
+.tab-panel {
+    display: none;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+input[type="radio"]#tab1:checked ~ .indicator {
+    top: 0;
+}
+input[type="radio"]#tab2:checked ~ .indicator {
+    top: 70px;
+}
+input[type="radio"]#tab3:checked ~ .indicator {
+    top: 140px;
+}
+input[type="radio"]#tab4:checked ~ .indicator {
+    top: 210px;
+}
+input[type="radio"]#tab5:checked ~ .indicator {
+    top: 280px;
+}
+
+input[type="radio"]#tab1:checked ~ .list .home,
+input[type="radio"]#tab2:checked ~ .list .blog,
+input[type="radio"]#tab3:checked ~ .list .help,
+input[type="radio"]#tab4:checked ~ .list .code,
+input[type="radio"]#tab5:checked ~ .list .about {
+    background-color: #6d50e2; 
+    color: #fff; 
+}
+
+::selection {
+    background: #6d50e2;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .list {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-bottom: 20px;
+    }
+
+    .list label {
+        flex-direction: column;
+        justify-content: center;
+        width: auto;
+        height: 50px;
+        padding: 0;
+        font-size: 0;
+    }
+
+    .list label i {
+        margin: 0;
+        font-size: 24px;
+    }
+
+    .topic {
+        display: none;
+    }
+
+    .tab-content {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .indicator {
+        display: none;
+    }
+}
