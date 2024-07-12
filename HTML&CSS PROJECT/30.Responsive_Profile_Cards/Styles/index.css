@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+    display: grid;
+    height: 100%;
+    place-items: center;
+    background: #8e44ad;
+}
+
+::selection {
+    background: #8e44ad;
+    color: #fff;
+}
+
+.container {
+    max-width: 1100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.container .box {
+    width: calc(33% - 10px);
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.box .image {
+    margin: 10px 0;
+    height: 150px;
+    width: 150px;
+    background: #8e44ad;
+    padding: 3px;
+    border-radius: 50%;
+}
+
+.box .image img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #fff;
+}
+
+.box .name {
+    margin: 10px 0 3px 0;
+    color: #8e44ad;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.box .rating i {
+    font-size: 10px;
+    color: #8e44ad;
+    margin-bottom: 5px;
+}
+
+.box p {
+    text-align: justify;
+    margin-top: 8px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #333;
+}
+
+.btns {
+    margin-top: 20px;
+    margin-bottom: 5px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.btns button {
+    width: 48%;
+    padding: 9px 0;
+    outline: none;
+    border: 2px solid #8e44ad;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 400;
+    transition: all 0.3s linear;
+}
+
+.btns button.read-more {
+    background: none;
+    color: #8e44ad;
+}
+
+.btns button.subscribe {
+    background: #8e44ad;
+    color: #fff;
+}
+
+.btns button.read-more:hover{
+    background: #8e44ad;
+    color: #fff;
+}
+
+.btns button.subscribe:hover{
+    opacity: 0.85;
+}
+
+.btns button.read-more:active{
+    opacity: 0.9;
+}
+
+.btns button.subscribe:active{
+    opacity: 0.95;
+}
+
+@media (max-width: 1045px) {
+    .container .box {
+        width: calc(50% - 10px);
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 710px) {
+    .container .box {
+        width: 100%;
+    }
+}
