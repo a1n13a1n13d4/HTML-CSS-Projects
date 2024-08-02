@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Button</title>
+    <link rel="stylesheet" href="Styles/index.css">
+    <link rel="shortcut icon" href="images/logo2.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="toggle-btn">
+        <div class="icon">
+            <i class="fas fa-lock-open"></i>
+        </div>
+    </div>
+    <script>
+        const toggleBtn = document.querySelector(".toggle-btn");
+        const lockIcon = document.querySelector(".icon i");
+
+        toggleBtn.addEventListener("click", () => {
+            toggleBtn.classList.toggle("active");
+
+            if(toggleBtn.classList.contains("active")){
+                return lockIcon.classList.replace("fa-lock-open", "fa-lock");
+            }
+            lockIcon.classList.replace("fa-lock", "fa-lock-open");
+        });
+    </script>
+</body>
+</html>
